@@ -1,4 +1,4 @@
-from utils import *
+from .utils import *
 
 class Time_features:
 
@@ -54,18 +54,20 @@ class Time_features:
         return [str(val) for val in self.lista_resultados]
 
     def gerar_resultados(self):
-        saida = ''
-        for valor in self.lista_resultados:
-            saida += ";"+str(valor)
+        return ';'.join(self.get_lista_resultados())
+        # saida = ''
+        # for valor in self.lista_resultados:
+        #     saida += ";"+str(valor)
 
-        return saida.removeprefix(';')
+        # return saida.removeprefix(';')
     
     def gerar_cabecalho(self):
-        saida = ''
-        for valor in self.lista_processados:
-            saida += ";"+str(valor)
+        return ';'.join(self.lista_processados)
+        # saida = ''
+        # for valor in self.lista_processados:
+        #     saida += ";"+str(valor)
 
-        return saida.removeprefix(';')
+        # return saida.removeprefix(';')
 
     def calcular_tudo(self):
 

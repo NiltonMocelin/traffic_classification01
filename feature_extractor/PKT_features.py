@@ -1,4 +1,4 @@
-from utils import *
+from .utils import *
 
 class PKT_features:
 
@@ -32,18 +32,10 @@ class PKT_features:
         return [str(val) for val in self.lista_resultados]
 
     def gerar_cabecalho(self):
-        saida = ''
-        for str in self.lista_processados:
-            saida += ";"+str
-
-        return saida.removeprefix(';')
-    
+        return ';'.join(self.lista_processados)
+  
     def gerar_resultados(self):
-        saida = ''
-        for res in self.lista_resultados:
-            saida += ";"+str(res)
-
-        return saida.removeprefix(';')
+        return ';'.join(self.get_lista_resultados())
 
     def calcular_tudo(self):
 
